@@ -1,31 +1,114 @@
-/* Reinicio básico */
+/* ============================================================
+   REINICIO BÁSICO
+   ============================================================ */
 * {
     box-sizing: border-box;
 }
 
-/* Fondo general */
+/* ============================================================
+   ESTILOS GENERALES
+   ============================================================ */
 body {
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
+    background: #fcf8f4;
     font-family: Arial, sans-serif;
 }
 
-/* Contenedor centrado */
 .carta-contenedor {
     width: 100%;
-    max-width: 900px;     
+    max-width: 900px;
     margin: 0 auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;      /* CENTRA LAS IMÁGENES */
+    align-items: center;
 }
 
-/* Imágenes */
+/* ============================================================
+   INTRO PRESENTACIÓN (AJUSTE CENTRADO)
+   ============================================================ */
+.intro-presentacion {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;          /* Centra todo el conjunto */
+    align-items: center;
+    margin: 20px auto 30px auto;
+    padding: 10px 15px;
+    gap: 10px;                         /* 🔹 MENOS distancia texto-logo */
+}
+
+/* Contenedor de textos */
+.intro-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;                          /* Textos más compactos */
+    text-align: right;                 /* Mejor alineación hacia el logo */
+}
+
+/* Textos */
+.intro-texto h1,
+.intro-texto h2 {
+    margin: 0;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+.intro-texto h1 {
+    font-size: 34px;
+    color: #75391C;
+}
+
+.intro-texto h2 {
+    font-size: 26px;
+    color: #555;
+}
+
+/* Logo */
+.logo-intro {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =============================
+   RESPONSIVE (MÓVIL)
+   ============================= */
+@media (max-width: 700px) {
+    .intro-presentacion {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .intro-texto {
+        text-align: center;
+        gap: 4px;
+    }
+
+    .intro-texto h1 {
+        font-size: 28px;
+    }
+
+    .intro-texto h2 {
+        font-size: 22px;
+    }
+
+    .logo-intro {
+        width: 130px;
+    }
+}
+
+/* ============================================================
+   IMÁGENES DE LA CARTA
+   ============================================================ */
 .carta-imagen {
-    width: 100%;              /* SE AJUSTAN AL ANCHO DEL MÓVIL */
-    max-width: 100%;          /* NUNCA SOBREPASAN EL CONTENEDOR */
+    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     margin-bottom: 20px;
@@ -33,54 +116,121 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
+/* ============================================================
+   FECHA AUTOMÁTICA
+   ============================================================ */
 .fecha-actualizacion {
     width: 100%;
     text-align: center;
     color: #01a1db;
     font-size: 14px;
     margin: 0 auto 10px auto;
-    font-family: 'Roboto Condensed', Arial, sans-serif; /* 🔵 NUEVA FUENTE */
-    font-weight: 300;  /* muy parecida a la minúscula de la imagen */
-    letter-spacing: 0.5px; /* un punto extra de claridad */
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
-/* Footer del logo */
+/* ============================================================
+   BOTONES DE CONTACTO
+   ============================================================ */
+.contacto-botones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.btn-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    gap: 10px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+/* Azules y verdes */
+.btn-telefono { background-color: #0b2346; }
+.btn-whatsapp2 { background-color: #25d366; }
+
+/* Iconos dentro de los botones */
+.icono-svg svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+/* Hover */
+.btn-contacto:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+/* Móvil → botones uno debajo del otro */
+@media (max-width: 600px) {
+    .contacto-botones {
+        flex-direction: column;
+    }
+    .btn-contacto {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   FOOTER CON LOGO
+   ============================================================ */
 .footer-logo {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;      /* Centra verticalmente también */
     margin-top: 10px;
     margin-bottom: 20px;
-
-    padding: 0;               /* evita desplazamientos */
-    text-align: center;       /* refuerzo para móviles */
+    text-align: center;
 }
 
-/* Imagen del logo */
 .logo-footer {
-    width: 220px;             /* PC */
-    max-width: 70%;           /* móviles normales */
+    width: 220px;
+    max-width: 70%;
     height: auto;
     opacity: 0.9;
-    transition: opacity 0.3s ease;
-    display: block;           /* evita que inline afecte alineación */
-    margin: 0 auto;           /* CENTRADO FORZADO */
+    transition: 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .logo-footer:hover {
     opacity: 1;
 }
 
+/* Móvil pequeño */
+@media (max-width: 380px) {
+    .logo-footer {
+        width: 150px;
+        max-width: 65%;
+        margin: 20px auto 10px;
+    }
+}
+
+/* ============================================================
+   BOTÓN SUBIR
+   ============================================================ */
 .btn-subir {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 50px;
     height: 50px;
-    background: rgba(1, 161, 219, 0.3);  /* 🔵 azul transparente */
-    color: #01a1db;                       /* 🔵 flecha azul sólida */
-    border: 2px solid #01a1db;            /* 🔵 borde azul bonito */
+    background: rgba(1, 161, 219, 0.3);
+    color: #01a1db;
+    border: 2px solid #01a1db;
     border-radius: 50%;
     font-size: 22px;
     display: none;
@@ -88,16 +238,15 @@ body {
     align-items: center;
     cursor: pointer;
     z-index: 9999;
-    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .btn-subir:hover {
     opacity: 1;
-    background: rgba(1, 161, 219, 0.5);   /* un poco menos transparente al pasar */
+    background: rgba(1, 161, 219, 0.5);
     transform: scale(1.1);
 }
 
-/* Más pequeño en móviles */
 @media (max-width: 480px) {
     .btn-subir {
         width: 40px;
@@ -108,16 +257,9 @@ body {
     }
 }
 
-/* Móviles pequeños (≤380px) */
-@media (max-width: 380px) {
-    .logo-footer {
-        width: 150px;
-        max-width: 65%;
-        margin: 20px auto 10px;  /* centrar con margen reforzado */
-    }
-}
-
-/* Ajuste especial para pantallas muy pequeñas */
+/* ============================================================
+   AJUSTES RESPONSIVE GENERALES
+   ============================================================ */
 @media (max-width: 480px) {
     .carta-contenedor {
         padding: 5px;
@@ -126,5 +268,4 @@ body {
         margin-bottom: 15px;
     }
 }
-
 

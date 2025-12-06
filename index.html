@@ -3,35 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Tía Tula</title>
+
+    <!-- Fuente Roboto Condensed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
-    <title>Carta del restaurante</title>
 
     <!-- CSS externo -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-    <main class="carta-contenedor">
-        <img src="img/asadorpag1&2.webp" alt="Carta página 1" class="carta-imagen">
-        <img src="img/asadorpag3&4.webp" alt="Carta página 2" class="carta-imagen">
-        <img src="img/asadorpag5&6.webp" alt="Carta página 3" class="carta-imagen">
+    <!-- Intro con texto + logo -->
+    <section class="intro-presentacion">
+    
+        <div class="intro-texto">
+            <h1>Bienvenido a</h1>
+            <h2>Welcome to</h2>
+        </div>
+    
+        <div class="intro-logo">
+            <img src="img/TiaTula.jpg" alt="TitTula" class="logo-intro">
+        </div>
+    
+    </section>    
 
-            <!-- Footer con logo -->
+    <main class="carta-contenedor">
+
+        <!-- Imágenes de la carta -->
+        <img src="img/CartaTiaTula.webp" class="carta-imagen" alt="Carta página 1">
+        <!-- Botones de contacto -->
+        <div class="contacto-botones">
+
+            <!-- Botón llamar -->
+            <a href="tel:8546021XX" class="btn-contacto btn-telefono">
+                <span class="icono-svg">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 
+                                 1 0 011.05-.24 11.72 11.72 0 003.68.59 1 
+                                 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 
+                                 011-1h3.5a1 1 0 011 1 11.72 11.72 0 
+                                 00.59 3.68 1 1 0 01-.24 1.05l-2.23 2.06z"/>
+                    </svg>
+                </span>
+                Llamar ahora
+            </a>
+
+            <!-- Botón WhatsApp -->
+            
+            <a href="https://wa.me/+346866884XX?text=Hola%2C%20me%20llamo%20" target="_blank"
+               class="btn-contacto btn-whatsapp2">
+                <span class="icono-svg">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M16.002 3.2c-7.065 0-12.8 5.735-12.8 12.8 0 
+                                 2.258.589 4.371 1.619 6.217L3.2 28.8l6.764-1.585A12.73 
+                                 12.73 0 0016 28.802c7.065 0 12.8-5.735 
+                                 12.8-12.8s-5.735-12.8-12.798-12.8zm0 
+                                 23.467c-2.094 0-4.057-.622-5.706-1.688l-.408-.257-4.012.941.941-3.904-.266-.427A10.63 
+                                 10.63 0 015.375 16c0-5.907 
+                                 4.72-10.627 10.627-10.627S26.63 10.093 
+                                 26.63 16c0 5.907-4.72 10.627-10.627 
+                                 10.627zm6.2-7.92c-.34-.17-2.012-.996-2.322-1.11-.31-.113-.535-.17-.76.17-.226.34-.87 
+                                 1.11-1.067 1.336-.197.226-.394.255-.733.085-.34-.17-1.435-.529-2.734-1.685-1.01-.9-1.693-2.01-1.89-2.35-.197-.34-.021-.523.148-.693.152-.152.34-.394.51-.59.17-.197.227-.34.34-.566.113-.226.057-.424-.028-.594-.085-.17-.76-1.832-1.04-2.508-.273-.655-.552-.566-.76-.566-.197 0-.424-.028-.648-.028-.226 
+                                 0-.594.085-.905.424-.31.34-1.187 
+                                 1.16-1.187 2.824 0 1.665 1.215 3.273 1.383 
+                                 3.5.17.226 2.392 3.65 5.8 5.103 3.408 
+                                 1.453 3.408.969 4.02.91.612-.057 
+                                 2.012-.81 2.294-1.594.283-.783.283-1.453.198-1.594-.085-.142-.31-.226-.648-.396z"/>
+                    </svg>
+                </span>
+                WhatsApp
+            </a>
+
+        </div>
+
+        <!-- Fecha automática -->
+        <p id="fecha-auto" class="fecha-actualizacion"></p>
+
+        <!-- Footer con logo -->
         <footer class="footer-logo">
             <a href="https://informaticosonline.es/" target="_blank">
                 <img src="img/logo-blanco.webp" alt="Logo Informaticos Online" class="logo-footer">
             </a>
         </footer>
 
-        <p id="fecha-auto" class="fecha-actualizacion"></p>
-        
     </main>
 
-    <!-- JS externo -->
+    <!-- Botón subir -->
     <button id="btn-subir" class="btn-subir">▲</button>
+
+    <!-- JS externo -->
     <script src="js/app.js"></script>
-    
 </body>
 </html>

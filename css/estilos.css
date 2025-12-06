@@ -1,0 +1,130 @@
+/* Reinicio básico */
+* {
+    box-sizing: border-box;
+}
+
+/* Fondo general */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor centrado */
+.carta-contenedor {
+    width: 100%;
+    max-width: 900px;     
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* CENTRA LAS IMÁGENES */
+}
+
+/* Imágenes */
+.carta-imagen {
+    width: 100%;              /* SE AJUSTAN AL ANCHO DEL MÓVIL */
+    max-width: 100%;          /* NUNCA SOBREPASAN EL CONTENEDOR */
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.fecha-actualizacion {
+    width: 100%;
+    text-align: center;
+    color: #01a1db;
+    font-size: 14px;
+    margin: 0 auto 10px auto;
+    font-family: 'Roboto Condensed', Arial, sans-serif; /* 🔵 NUEVA FUENTE */
+    font-weight: 300;  /* muy parecida a la minúscula de la imagen */
+    letter-spacing: 0.5px; /* un punto extra de claridad */
+}
+
+/* Footer del logo */
+.footer-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;      /* Centra verticalmente también */
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    padding: 0;               /* evita desplazamientos */
+    text-align: center;       /* refuerzo para móviles */
+}
+
+/* Imagen del logo */
+.logo-footer {
+    width: 220px;             /* PC */
+    max-width: 70%;           /* móviles normales */
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    display: block;           /* evita que inline afecte alineación */
+    margin: 0 auto;           /* CENTRADO FORZADO */
+}
+
+.logo-footer:hover {
+    opacity: 1;
+}
+
+.btn-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(1, 161, 219, 0.3);  /* 🔵 azul transparente */
+    color: #01a1db;                       /* 🔵 flecha azul sólida */
+    border: 2px solid #01a1db;            /* 🔵 borde azul bonito */
+    border-radius: 50%;
+    font-size: 22px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-subir:hover {
+    opacity: 1;
+    background: rgba(1, 161, 219, 0.5);   /* un poco menos transparente al pasar */
+    transform: scale(1.1);
+}
+
+/* Más pequeño en móviles */
+@media (max-width: 480px) {
+    .btn-subir {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Móviles pequeños (≤380px) */
+@media (max-width: 380px) {
+    .logo-footer {
+        width: 150px;
+        max-width: 65%;
+        margin: 20px auto 10px;  /* centrar con margen reforzado */
+    }
+}
+
+/* Ajuste especial para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .carta-contenedor {
+        padding: 5px;
+    }
+    .carta-imagen {
+        margin-bottom: 15px;
+    }
+}
+
+

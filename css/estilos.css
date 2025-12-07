@@ -383,11 +383,38 @@ body {
     max-width: 70%;
 }
 
-.precios {
-    display: flex;
-    gap: 40px;
-    font-weight: bold;
-    color: #01a1db;
+@media (max-width: 600px) {
+
+    .precios {
+        flex-direction: column;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .precios span {
+        font-size: 15px;
+        color: #01a1db;
+    }
+
+    /* MOSTRAR ETIQUETAS EN MÓVIL */
+    .precios span::before {
+        font-size: 13px;
+        color: #d6b067;
+        margin-right: 6px;
+    }
+
+    .precios span:nth-child(1)::before {
+        content: "Tapa: ";
+    }
+
+    .precios span:nth-child(2)::before {
+        content: "Ración: ";
+    }
+
+    /* OCULTAR CABECERA SUPERIOR SOLO EN MÓVIL */
+    .col-precios {
+        display: none;
+    }
 }
 
 .fila-plato.simple {

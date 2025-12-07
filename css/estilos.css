@@ -450,6 +450,170 @@ body {
 }
 
 /* =========================
+   SISTEMA DE ALÉRGENOS EN PLATOS
+========================= */
+.alergenos-plato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.alergeno-mini {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: help;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.alergeno-mini:hover {
+    transform: scale(1.1);
+    z-index: 5;
+}
+
+/* Tooltip para alérgenos */
+.alergeno-mini::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.alergeno-mini:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Colores específicos para cada alérgeno */
+.alergeno-mini[data-alergeno="gluten"] { background: #e74c3c; }
+.alergeno-mini[data-alergeno="crustaceos"] { background: #3498db; }
+.alergeno-mini[data-alergeno="huevo"] { background: #f39c12; }
+.alergeno-mini[data-alergeno="pescado"] { background: #1abc9c; }
+.alergeno-mini[data-alergeno="cacahuetes"] { background: #8e44ad; }
+.alergeno-mini[data-alergeno="soja"] { background: #d35400; }
+.alergeno-mini[data-alergeno="lacteos"] { background: #2ecc71; }
+.alergeno-mini[data-alergeno="frutos-cascara"] { background: #9b59b6; }
+.alergeno-mini[data-alergeno="apio"] { background: #27ae60; }
+.alergeno-mini[data-alergeno="mostaza"] { background: #e67e22; }
+.alergeno-mini[data-alergeno="sesamo"] { background: #16a085; }
+.alergeno-mini[data-alergeno="sulfitos"] { background: #c0392b; }
+.alergeno-mini[data-alergeno="altramuces"] { background: #8e44ad; }
+.alergeno-mini[data-alergeno="moluscos"] { background: #2980b9; }
+
+/* =========================
+   LEYENDA DE ALÉRGENOS
+========================= */
+.alergenos-leyenda {
+    background: rgba(43, 26, 16, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 860px;
+    width: 100%;
+    border: 2px solid rgba(214, 176, 103, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.alergenos-leyenda h3 {
+    color: #d6b067;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    text-align: center;
+    border-bottom: 1px dashed rgba(214, 176, 103, 0.4);
+    padding-bottom: 10px;
+}
+
+.alergenos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.alergeno-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.alergeno-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.alergeno-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: #01a1db;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* Colores específicos para cada alérgeno (leyenda) */
+.alergeno-icono[data-alergeno="gluten"] { background: #e74c3c; }
+.alergeno-icono[data-alergeno="crustaceos"] { background: #3498db; }
+.alergeno-icono[data-alergeno="huevo"] { background: #f39c12; }
+.alergeno-icono[data-alergeno="pescado"] { background: #1abc9c; }
+.alergeno-icono[data-alergeno="cacahuetes"] { background: #8e44ad; }
+.alergeno-icono[data-alergeno="soja"] { background: #d35400; }
+.alergeno-icono[data-alergeno="lacteos"] { background: #2ecc71; }
+.alergeno-icono[data-alergeno="frutos-cascara"] { background: #9b59b6; }
+.alergeno-icono[data-alergeno="apio"] { background: #27ae60; }
+.alergeno-icono[data-alergeno="mostaza"] { background: #e67e22; }
+.alergeno-icono[data-alergeno="sesamo"] { background: #16a085; }
+.alergeno-icono[data-alergeno="sulfitos"] { background: #c0392b; }
+.alergeno-icono[data-alergeno="altramuces"] { background: #8e44ad; }
+.alergeno-icono[data-alergeno="moluscos"] { background: #2980b9; }
+
+.alergeno-texto {
+    color: #ddd;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.alergeno-nota {
+    color: #aaa;
+    font-size: 12px;
+    text-align: center;
+    margin: 15px 0 0 0;
+    font-style: italic;
+    line-height: 1.4;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
    RESPONSIVE - MÓVIL
 ========================= */
 @media (max-width: 768px) {
@@ -536,6 +700,31 @@ body {
         align-items: flex-start;
         gap: 10px;
     }
+    
+    /* Responsive para leyenda de alérgenos */
+    .alergenos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .alergenos-leyenda {
+        padding: 15px;
+        margin: 20px auto;
+    }
+    
+    .alergeno-item {
+        padding: 4px;
+    }
+    
+    .alergeno-icono {
+        width: 24px;
+        height: 24px;
+        font-size: 13px;
+    }
+    
+    .alergeno-texto {
+        font-size: 12px;
+    }
 }
 
 /* Móvil pequeño */
@@ -579,6 +768,16 @@ body {
     
     .fila-plato::after {
         right: 70px;
+    }
+    
+    /* Responsive para leyenda de alérgenos móvil pequeño */
+    .alergenos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .alergenos-leyenda {
+        padding: 12px;
+        margin: 15px auto;
     }
 }
 
@@ -820,34 +1019,6 @@ body {
         top: 8px;
         right: 8px;
     }
-}
-
-/* =========================
-   ESTILOS ESPECIALES PARA DEBUG (opcional)
-========================= */
-.debug-click {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background: #ff4444;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    z-index: 100000;
-    display: none;
-}
-
-/* =========================
-   ANIMACIONES DE CARGA (opcional)
-========================= */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease forwards;
 }
 
 /* =========================

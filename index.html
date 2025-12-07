@@ -5,215 +5,115 @@
     <title>Carta Bar Rey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fuente -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-<!-- =========================
-     INTRO
-========================= -->
-<section class="intro-presentacion">
+<!-- INTRO -->
+<section class="intro">
     <div class="intro-texto">
         <h1>Bienvenido a</h1>
         <h2>Welcome to</h2>
     </div>
-    <div class="intro-logo">
-        <img src="img/BarRey.webp" alt="Bar Rey" class="logo-intro">
-    </div>
+    <img src="img/BarRey.webp" class="logo-intro">
 </section>
 
-<!-- =========================
-     CONTENEDOR CARTA
-========================= -->
+<!-- CARTA -->
 <main class="carta-contenedor">
 
 <section class="carta-premium">
 
-    <div class="carta-header">
-        <h1>BAR REY</h1>
-        <p>Tapas & Cocina Casera</p>
-        <span>CARTA · Precios en euros · IVA incluido</span>
+<div class="carta-header">
+    <h1>BAR REY</h1>
+    <p>Tapas & Cocina Casera</p>
+    <span>CARTA · Precios en euros · IVA incluido</span>
+</div>
+
+<!-- TAPAS Y RACIONES -->
+<div class="bloque-categoria">
+
+<div class="cabecera-precios">
+    <h2>Tapas y Raciones</h2>
+    <div class="col-precios"><span>TAPA</span><span>RACIÓN</span></div>
+</div>
+
+<!-- PLATOS -->
+<div class="fila-plato">
+    <div class="info-plato">
+        <strong>Patatas bravas</strong>
+        <p>Patatas fritas con salsa casera ligeramente picante</p>
     </div>
+    <div class="precios"><span>2,50 €</span><span>4,50 €</span></div>
+    <div class="plato-imagen"><img src="img/patatas.jpg"></div>
+</div>
 
-    <!-- =========================
-         TAPAS Y RACIONES
-    ========================= -->
-    <div class="bloque-categoria">
-
-        <div class="cabecera-precios">
-            <h2>Tapas y Raciones</h2>
-            <div class="col-precios">
-                <span>TAPA</span>
-                <span>RACIÓN</span>
-            </div>
-        </div>
-
-        <!-- ✅ PLATO 1 -->
-        <div class="fila-plato fila-con-imagen">
-            <div class="info-plato">
-                <strong>Patatas bravas</strong>
-                <p>Patatas fritas con salsa casera ligeramente picante</p>
-                <div class="precios">
-                    <span>2,50 €</span>
-                    <span>4,50 €</span>
-                </div>
-            </div>
-            <div class="plato-imagen">
-                <img src="img/patatas.jpg" alt="Patatas bravas">
-            </div>
-        </div>
-
-        <!-- ✅ PLATO 2 -->
-        <div class="fila-plato fila-con-imagen">
-            <div class="info-plato">
-                <strong>Croquetas caseras</strong>
-                <p>Cremosas por dentro, crujientes por fuera</p>
-                <div class="precios">
-                    <span>3,00 €</span>
-                    <span>5,00 €</span>
-                </div>
-            </div>
-            <div class="plato-imagen">
-                <img src="img/croquetas.jpg" alt="Croquetas">
-            </div>
-        </div>
-
-        <!-- ✅ PLATO 3 -->
-        <div class="fila-plato fila-con-imagen">
-            <div class="info-plato">
-                <strong>Chicharrones</strong>
-                <p>Carne crujiente al estilo tradicional</p>
-                <div class="precios">
-                    <span>3,50 €</span>
-                    <span>5,50 €</span>
-                </div>
-            </div>
-            <div class="plato-imagen">
-                <img src="img/chicharrones.jpg" alt="Chicharrones">
-            </div>
-        </div>
-
-        <!-- ✅ PLATO 4 -->
-        <div class="fila-plato fila-con-imagen">
-            <div class="info-plato">
-                <strong>Calamares fritos</strong>
-                <p>Rebozados al momento con harina especial</p>
-                <div class="precios">
-                    <span>4,50 €</span>
-                    <span>7,00 €</span>
-                </div>
-            </div>
-            <div class="plato-imagen">
-                <img src="img/calamares.jpg" alt="Calamares">
-            </div>
-        </div>
-
-        <!-- ✅ PLATO 5 -->
-        <div class="fila-plato fila-con-imagen">
-            <div class="info-plato">
-                <strong>Gambas al ajillo</strong>
-                <p>Salteadas con ajo, guindilla y aceite de oliva</p>
-                <div class="precios">
-                    <span>5,50 €</span>
-                    <span>8,50 €</span>
-                </div>
-            </div>
-            <div class="plato-imagen">
-                <img src="img/gambas.jpg" alt="Gambas al ajillo">
-            </div>
-        </div>
-
+<div class="fila-plato">
+    <div class="info-plato">
+        <strong>Croquetas caseras</strong>
+        <p>Cremosas por dentro, crujientes por fuera</p>
     </div>
+    <div class="precios"><span>3,00 €</span><span>5,00 €</span></div>
+    <div class="plato-imagen"><img src="img/croquetas.jpg"></div>
+</div>
 
-    <!-- =========================
-         POSTRES
-    ========================= -->
-    <div class="bloque-categoria">
-        <h2>Postres</h2>
-
-        <div class="fila-plato simple">
-            <strong>Flan casero</strong>
-            <span>3,00 €</span>
-        </div>
-
-        <div class="fila-plato simple">
-            <strong>Tarta de chocolate</strong>
-            <span>3,50 €</span>
-        </div>
-
-        <div class="fila-plato simple">
-            <strong>Helado variado</strong>
-            <span>2,50 €</span>
-        </div>
-
-        <div class="fila-plato simple">
-            <strong>Tarta de la abuela</strong>
-            <span>3,50 €</span>
-        </div>
-
-        <div class="fila-plato simple">
-            <strong>Tarta de limón</strong>
-            <span>3,00 €</span>
-        </div>
+<div class="fila-plato">
+    <div class="info-plato">
+        <strong>Chicharrones</strong>
+        <p>Carne crujiente al estilo tradicional</p>
     </div>
+    <div class="precios"><span>3,50 €</span><span>5,50 €</span></div>
+    <div class="plato-imagen"><img src="img/chicharrones.jpg"></div>
+</div>
+
+<div class="fila-plato">
+    <div class="info-plato">
+        <strong>Calamares fritos</strong>
+        <p>Rebozados al momento con harina especial</p>
+    </div>
+    <div class="precios"><span>4,50 €</span><span>7,00 €</span></div>
+    <div class="plato-imagen"><img src="img/calamares.jpg"></div>
+</div>
+
+<div class="fila-plato">
+    <div class="info-plato">
+        <strong>Gambas al ajillo</strong>
+        <p>Salteadas con ajo y aceite de oliva</p>
+    </div>
+    <div class="precios"><span>5,50 €</span><span>8,50 €</span></div>
+    <div class="plato-imagen"><img src="img/gambas.jpg"></div>
+</div>
+
+</div>
+
+<!-- POSTRES -->
+<div class="bloque-categoria">
+<h2>Postres</h2>
+
+<div class="fila-postre"><span>Flan casero</span><span>3,00 €</span></div>
+<div class="fila-postre"><span>Tarta de chocolate</span><span>3,50 €</span></div>
+<div class="fila-postre"><span>Helado variado</span><span>2,50 €</span></div>
+<div class="fila-postre"><span>Tarta de la abuela</span><span>3,50 €</span></div>
+<div class="fila-postre"><span>Tarta de limón</span><span>3,00 €</span></div>
+
+</div>
 
 </section>
 
-<!-- =========================
-     BOTONES DE CONTACTO
-========================= -->
+<!-- BOTONES -->
 <div class="contacto-botones">
-
-    <a href="tel:8546021XX" class="btn-contacto btn-telefono">
-        <span class="icono-svg">
-            <svg viewBox="0 0 24 24">
-                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 
-                1 0 011.05-.24 11.72 11.72 0 003.68.59 1 
-                1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 
-                011-1h3.5a1 1 0 011 1 11.72 11.72 0 
-                00.59 3.68 1 1 0 01-.24 1.05l-2.23 2.06z"/>
-            </svg>
-        </span>
-        Llamar ahora
-    </a>
-
-    <a href="https://wa.me/+346866884XX" target="_blank"
-       class="btn-contacto btn-whatsapp2">
-        <span class="icono-svg">
-            <svg viewBox="0 0 32 32">
-                <path d="M16.002 3.2c-7.065 0-12.8 5.735-12.8 12.8 
-                0 2.258.589 4.371 1.619 6.217L3.2 28.8l6.764-1.585A12.73 
-                12.73 0 0016 28.802c7.065 0 12.8-5.735 
-                12.8-12.8s-5.735-12.8-12.798-12.8z"/>
-            </svg>
-        </span>
-        WhatsApp
-    </a>
-
+    <a class="btn btn-telefono" href="tel:8546021XX">📞 Llamar</a>
+    <a class="btn btn-whatsapp" href="https://wa.me/346866884XX">💬 WhatsApp</a>
 </div>
 
 </main>
 
-<!-- =========================
-     FECHA Y FOOTER
-========================= -->
-<p id="fecha-auto" class="fecha-actualizacion"></p>
-<p class="fecha-actualizacion">Elaborado por:</p>
+<!-- FOOTER -->
+<p class="fecha">Elaborado por:</p>
+<footer><img src="img/logo-blanco.webp"></footer>
 
-<footer class="footer-logo">
-    <a href="https://informaticosonline.es/" target="_blank">
-        <img src="img/logo-blanco.webp" alt="Logo Informáticos Online" class="logo-footer">
-    </a>
-</footer>
+<button id="btn-subir">▲</button>
 
-<!-- BOTÓN SUBIR -->
-<button id="btn-subir" class="btn-subir">▲</button>
-
-<script src="js/app.js"></script>
 </body>
 </html>
 

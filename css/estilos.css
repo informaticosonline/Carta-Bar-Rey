@@ -3,16 +3,19 @@
    ============================================================ */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================================
    ESTILOS GENERALES
    ============================================================ */
 body {
-    margin: 0;
-    padding: 0;
     background: linear-gradient(180deg, #f6efe6, #e8dccf);
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
 }
 
 .carta-contenedor {
@@ -26,6 +29,8 @@ body {
     background: linear-gradient(180deg, #6b3a1e, #4a2412);
     border-radius: 22px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
 }
 
 /* ============================================================
@@ -79,10 +84,15 @@ body {
    RESPONSIVE (MÓVIL)
    ============================= */
 @media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+    
     .intro-presentacion {
         flex-direction: column;
         gap: 8px;
         text-align: center;
+        margin: 10px auto 20px auto;
     }
 
     .intro-texto {
@@ -104,19 +114,6 @@ body {
 }
 
 /* ============================================================
-   IMÁGENES DE LA CARTA
-   ============================================================ */
-.carta-imagen {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-/* ============================================================
    FECHA AUTOMÁTICA
    ============================================================ */
 .fecha-actualizacion {
@@ -124,7 +121,7 @@ body {
     text-align: center;
     color: #01a1db;
     font-size: 14px;
-    margin: 0 auto 10px auto;
+    margin: 10px auto;
     font-family: 'Roboto Condensed', Arial, sans-serif;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -155,10 +152,17 @@ body {
     gap: 10px;
     transition: 0.2s ease;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
-.btn-telefono { background-color: #0b2346; }
-.btn-whatsapp2 { background-color: #25d366; }
+.btn-telefono { 
+    background-color: #0b2346; 
+}
+
+.btn-whatsapp2 { 
+    background-color: #25d366; 
+}
 
 .icono-svg svg {
     width: 22px;
@@ -234,6 +238,8 @@ body {
     cursor: pointer;
     z-index: 9999;
     transition: 0.3s ease;
+    border: none;
+    outline: none;
 }
 
 .btn-subir:hover {
@@ -249,18 +255,6 @@ body {
         font-size: 18px;
         bottom: 15px;
         right: 15px;
-    }
-}
-
-/* ============================================================
-   AJUSTES RESPONSIVE GENERALES
-   ============================================================ */
-@media (max-width: 480px) {
-    .carta-contenedor {
-        padding: 5px;
-    }
-    .carta-imagen {
-        margin-bottom: 15px;
     }
 }
 
@@ -346,18 +340,8 @@ body {
     display: inline-block;
 }
 
-/* CABECERA PARA POSTRES (SOLO UN PRECIO) */
-.cabecera-precios.postres .col-precios {
-    gap: 0;
-    min-width: 60px;
-}
-
-.cabecera-precios.postres .col-precios span {
-    width: 60px;
-}
-
 /* =========================
-   ESTRUCTURA DE FILAS CON IMÁGENES
+   ESTRUCTURA DE FILAS CON IMÁGENES - CLICABLES
 ========================= */
 .fila-plato {
     display: flex;
@@ -365,6 +349,34 @@ body {
     gap: 15px;
     padding: 12px 5px;
     border-bottom: 1px dashed rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.fila-plato:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Indicador visual de clic (lupa) */
+.fila-plato::after {
+    content: "🔍";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 14px;
+    color: #d6b067;
+    z-index: 2;
+}
+
+.fila-plato:hover::after {
+    opacity: 0.7;
 }
 
 /* Imagen del plato - IZQUIERDA EN PC */
@@ -377,6 +389,8 @@ body {
     box-shadow: 0 3px 8px rgba(0,0,0,0.3);
     border: 2px solid rgba(214,176,103,0.3);
     order: 1; /* Primera posición en PC */
+    position: relative;
+    z-index: 1;
 }
 
 .imagen-plato img {
@@ -384,6 +398,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .imagen-plato img:hover {
@@ -395,17 +410,21 @@ body {
     flex: 1;
     max-width: calc(100% - 250px);
     order: 2; /* Segunda posición en PC */
+    position: relative;
+    z-index: 1;
 }
 
 .fila-plato strong {
     font-size: 17px;
     color: #ffffff;
+    display: block;
 }
 
 .fila-plato p {
     margin: 4px 0 0;
     font-size: 14px;
     color: #bbb;
+    line-height: 1.4;
 }
 
 /* Precios - DERECHA EN PC */
@@ -416,6 +435,8 @@ body {
     min-width: 150px;
     text-align: right;
     order: 3; /* Tercera posición en PC */
+    position: relative;
+    z-index: 1;
 }
 
 .precios span {
@@ -428,20 +449,19 @@ body {
     text-align: center;
 }
 
-/* PRECIOS PARA POSTRES (SOLO UNO) */
-.precios.postre {
-    gap: 0;
-    min-width: 60px;
-}
-
-.precios.postre span {
-    width: 60px;
-}
-
 /* =========================
    RESPONSIVE - MÓVIL
 ========================= */
 @media (max-width: 768px) {
+    .carta-contenedor {
+        margin: 15px auto;
+        padding: 15px;
+    }
+    
+    .carta-premium {
+        padding: 15px;
+    }
+    
     /* REORDENACIÓN PARA MÓVIL: Imagen a la DERECHA */
     .fila-plato {
         flex-wrap: nowrap;
@@ -486,24 +506,23 @@ body {
     }
     
     /* Etiquetas TAPA/RACIÓN en móvil */
-    .precios:not(.postre) span:nth-child(1)::before {
+    .precios span:nth-child(1)::before {
         content: "Tapa: ";
         font-size: 13px;
         color: #d6b067;
         margin-right: 6px;
     }
     
-    .precios:not(.postre) span:nth-child(2)::before {
+    .precios span:nth-child(2)::before {
         content: "Ración: ";
         font-size: 13px;
         color: #d6b067;
         margin-right: 6px;
     }
     
-    /* Para postres en móvil */
-    .precios.postre span::before {
-        content: "";
-        margin-right: 0;
+    /* Ajuste indicador lupa para móvil */
+    .fila-plato::after {
+        right: 80px; /* Para no superponer con la imagen */
     }
     
     /* Ocultar cabecera de precios en móvil */
@@ -521,6 +540,15 @@ body {
 
 /* Móvil pequeño */
 @media (max-width: 480px) {
+    .carta-contenedor {
+        padding: 10px;
+        margin: 10px auto;
+    }
+    
+    .carta-premium {
+        padding: 12px;
+    }
+    
     .fila-plato {
         padding-right: 75px;
         gap: 10px;
@@ -545,29 +573,12 @@ body {
         font-size: 14px;
     }
     
-    .precios:not(.postre) span::before {
+    .precios span::before {
         font-size: 12px;
     }
-}
-
-/* Para platos sin imagen */
-.fila-plato:not(:has(.imagen-plato)) {
-    padding-right: 0 !important;
-}
-
-/* Ajuste específico para filas sin imagen en móvil */
-@media (max-width: 768px) {
-    .fila-plato:not(:has(.imagen-plato)) .info-plato {
-        max-width: 100%;
-    }
     
-    .fila-plato:not(:has(.imagen-plato)) .precios {
-        flex-direction: row;
-        gap: 30px;
-        width: 100%;
-        margin-top: 8px;
-        margin-left: 0;
-        justify-content: flex-start;
+    .fila-plato::after {
+        right: 70px;
     }
 }
 
@@ -582,8 +593,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: none; /* Oculto por defecto */
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 10000;
@@ -609,12 +620,13 @@ body {
     position: relative;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     border: 2px solid rgba(214, 176, 103, 0.3);
-    animation: lightboxAparece 0.4s ease;
+    animation: lightboxAparece 0.4s ease forwards;
+    transform-origin: center;
 }
 
 @keyframes lightboxAparece {
     from {
-        transform: scale(0.9);
+        transform: scale(0.8);
         opacity: 0;
     }
     to {
@@ -628,23 +640,24 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     border: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 10001;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1;
 }
 
 .lightbox-cerrar:hover {
-    background: rgba(214, 176, 103, 0.8);
+    background: rgba(214, 176, 103, 0.9);
     transform: rotate(90deg);
 }
 
@@ -654,19 +667,26 @@ body {
     height: 60vh;
     overflow: hidden;
     background: #000;
+    position: relative;
 }
 
 .lightbox-imagen-contenedor img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.5s ease;
+}
+
+.lightbox-imagen-contenedor img:hover {
+    transform: scale(1.02);
 }
 
 /* Información del plato */
 .lightbox-info {
     padding: 25px;
     color: white;
+    background: linear-gradient(0deg, rgba(5,3,1,1) 0%, rgba(43,26,16,0.9) 100%);
 }
 
 .lightbox-info h3 {
@@ -674,6 +694,7 @@ body {
     font-size: 28px;
     color: #d6b067;
     font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: 400;
 }
 
 .lightbox-info p {
@@ -696,6 +717,8 @@ body {
     font-size: 20px;
     color: #01a1db;
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 .lightbox-precios span::before {
@@ -717,52 +740,15 @@ body {
 }
 
 /* =========================
-   HACER FILAS CLICABLES
-========================= */
-.fila-plato {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.fila-plato:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-/* Indicador visual de clic */
-.fila-plato::after {
-    content: "🔍";
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    font-size: 14px;
-    color: #d6b067;
-}
-
-.fila-plato:hover::after {
-    opacity: 0.7;
-}
-
-/* Quitar el indicador en móvil cuando la imagen está a la derecha */
-@media (max-width: 768px) {
-    .fila-plato::after {
-        right: 80px; /* Para no superponer con la imagen */
-    }
-}
-
-/* =========================
    RESPONSIVE LIGHTBOX
 ========================= */
 @media (max-width: 768px) {
+    .lightbox {
+        padding: 10px;
+    }
+    
     .lightbox-contenido {
         width: 95%;
-        height: auto;
         max-height: 85vh;
     }
     
@@ -790,6 +776,14 @@ body {
     .lightbox-precios span {
         font-size: 18px;
     }
+    
+    .lightbox-cerrar {
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+        top: 10px;
+        right: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -805,11 +799,82 @@ body {
         font-size: 22px;
     }
     
-    .lightbox-cerrar {
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-        top: 10px;
-        right: 10px;
+    .lightbox-info p {
+        font-size: 14px;
+        margin-bottom: 15px;
     }
+    
+    .lightbox-precios {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+    
+    .lightbox-precios span {
+        font-size: 17px;
+    }
+    
+    .lightbox-cerrar {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        top: 8px;
+        right: 8px;
+    }
+}
+
+/* =========================
+   ESTILOS ESPECIALES PARA DEBUG (opcional)
+========================= */
+.debug-click {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #ff4444;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 100000;
+    display: none;
+}
+
+/* =========================
+   ANIMACIONES DE CARGA (opcional)
+========================= */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* =========================
+   MEJORAS DE ACCESIBILIDAD
+========================= */
+.fila-plato:focus {
+    outline: 2px solid #01a1db;
+    outline-offset: 2px;
+}
+
+.lightbox-cerrar:focus {
+    outline: 2px solid #01a1db;
+    outline-offset: 2px;
+}
+
+/* =========================
+   ESTILOS PARA IMÁGENES FALTANTES
+========================= */
+.imagen-plato img[src=""] {
+    background: linear-gradient(45deg, #2b1a10, #4a2412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-plato img[src=""]::after {
+    content: "🍽️";
+    font-size: 24px;
+    color: #d6b067;
 }

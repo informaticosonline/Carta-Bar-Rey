@@ -11,18 +11,22 @@
 body {
     margin: 0;
     padding: 0;
-    background: #fcf8f4;
+    background: linear-gradient(180deg, #f6efe6, #e8dccf);
     font-family: Arial, sans-serif;
 }
 
 .carta-contenedor {
     width: 100%;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 10px;
+    margin: 30px auto;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background: linear-gradient(180deg, #6b3a1e, #4a2412);
+    border-radius: 22px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 /* ============================================================
@@ -275,12 +279,13 @@ body {
 
 .carta-premium {
     width: 100%;
-    max-width: 900px;
-    background: radial-gradient(circle at top, #2b2b2b, #050505);
+    max-width: 860px;
+    background: radial-gradient(circle at top, #2b1a10, #050301);
     border-radius: 18px;
     padding: 25px;
     color: #f2f2f2;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.05),
+                0 10px 30px rgba(0,0,0,0.7);
     font-family: 'Roboto Condensed', Arial, sans-serif;
 }
 

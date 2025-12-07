@@ -2,15 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta Bar Rey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fuente Roboto Condensed -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuente -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
 
-    <!-- CSS externo -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -23,17 +21,16 @@
         <h1>Bienvenido a</h1>
         <h2>Welcome to</h2>
     </div>
-
     <div class="intro-logo">
         <img src="img/BarRey.webp" alt="Bar Rey" class="logo-intro">
     </div>
 </section>
 
+<!-- =========================
+     CONTENEDOR CARTA
+========================= -->
 <main class="carta-contenedor">
 
-<!-- =========================
-     CARTA PREMIUM
-========================= -->
 <section class="carta-premium">
 
     <div class="carta-header">
@@ -44,7 +41,7 @@
 
     <!-- =========================
          TAPAS Y RACIONES
-    ========================== -->
+    ========================= -->
     <div class="bloque-categoria">
 
         <div class="cabecera-precios">
@@ -55,7 +52,7 @@
             </div>
         </div>
 
-        <!-- PLATO -->
+        <!-- ✅ PLATO 1 -->
         <div class="fila-plato fila-con-imagen">
             <div class="info-plato">
                 <strong>Patatas bravas</strong>
@@ -66,10 +63,11 @@
                 </div>
             </div>
             <div class="plato-imagen">
-                <img src="img/patatas-bravas.webp" alt="Patatas bravas">
+                <img src="img/patatas.jpg" alt="Patatas bravas">
             </div>
         </div>
 
+        <!-- ✅ PLATO 2 -->
         <div class="fila-plato fila-con-imagen">
             <div class="info-plato">
                 <strong>Croquetas caseras</strong>
@@ -80,10 +78,11 @@
                 </div>
             </div>
             <div class="plato-imagen">
-                <img src="img/croquetas.webp" alt="Croquetas caseras">
+                <img src="img/croquetas.jpg" alt="Croquetas">
             </div>
         </div>
 
+        <!-- ✅ PLATO 3 -->
         <div class="fila-plato fila-con-imagen">
             <div class="info-plato">
                 <strong>Chicharrones</strong>
@@ -98,6 +97,7 @@
             </div>
         </div>
 
+        <!-- ✅ PLATO 4 -->
         <div class="fila-plato fila-con-imagen">
             <div class="info-plato">
                 <strong>Calamares fritos</strong>
@@ -108,10 +108,11 @@
                 </div>
             </div>
             <div class="plato-imagen">
-                <img src="img/calamares.jpg" alt="Calamares fritos">
+                <img src="img/calamares.jpg" alt="Calamares">
             </div>
         </div>
 
+        <!-- ✅ PLATO 5 -->
         <div class="fila-plato fila-con-imagen">
             <div class="info-plato">
                 <strong>Gambas al ajillo</strong>
@@ -130,57 +131,69 @@
 
     <!-- =========================
          POSTRES
-    ========================== -->
+    ========================= -->
     <div class="bloque-categoria">
         <h2>Postres</h2>
 
-        <div class="fila-plato simple fila-con-imagen">
-            <strong>Flan casero</strong><span>3,00 €</span>
-            <div class="plato-imagen">
-                <img src="img/flan.jpg" alt="Flan casero">
-            </div>
+        <div class="fila-plato simple">
+            <strong>Flan casero</strong>
+            <span>3,00 €</span>
         </div>
 
-        <div class="fila-plato simple fila-con-imagen">
-            <strong>Tarta de chocolate</strong><span>3,50 €</span>
-            <div class="plato-imagen">
-                <img src="img/tarta-chocolate.jpg" alt="Tarta de chocolate">
-            </div>
+        <div class="fila-plato simple">
+            <strong>Tarta de chocolate</strong>
+            <span>3,50 €</span>
         </div>
 
-        <div class="fila-plato simple fila-con-imagen">
-            <strong>Helado variado</strong><span>2,50 €</span>
-            <div class="plato-imagen">
-                <img src="img/helado.jpg" alt="Helado variado">
-            </div>
+        <div class="fila-plato simple">
+            <strong>Helado variado</strong>
+            <span>2,50 €</span>
         </div>
 
-        <div class="fila-plato simple fila-con-imagen">
-            <strong>Tarta de la abuela</strong><span>3,50 €</span>
-            <div class="plato-imagen">
-                <img src="img/tarta-abuela.jpg" alt="Tarta de la abuela">
-            </div>
+        <div class="fila-plato simple">
+            <strong>Tarta de la abuela</strong>
+            <span>3,50 €</span>
         </div>
 
-        <div class="fila-plato simple fila-con-imagen">
-            <strong>Tarta de limón</strong><span>3,00 €</span>
-            <div class="plato-imagen">
-                <img src="img/tarta-limon.jpg" alt="Tarta de limón">
-            </div>
+        <div class="fila-plato simple">
+            <strong>Tarta de limón</strong>
+            <span>3,00 €</span>
         </div>
     </div>
 
 </section>
 
 <!-- =========================
-     BOTONES
+     BOTONES DE CONTACTO
 ========================= -->
 <div class="contacto-botones">
 
-    <a href="tel:8546021XX" class="btn-contacto btn-telefono">📞 Llamar ahora</a>
+    <a href="tel:8546021XX" class="btn-contacto btn-telefono">
+        <span class="icono-svg">
+            <svg viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 
+                1 0 011.05-.24 11.72 11.72 0 003.68.59 1 
+                1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 
+                011-1h3.5a1 1 0 011 1 11.72 11.72 0 
+                00.59 3.68 1 1 0 01-.24 1.05l-2.23 2.06z"/>
+            </svg>
+        </span>
+        Llamar ahora
+    </a>
 
     <a href="https://wa.me/+346866884XX" target="_blank"
-       class="btn-contacto btn-whatsapp2">💬 WhatsApp</a>
+       class="btn-contacto btn-whatsapp2">
+        <span class="icono-svg">
+            <svg viewBox="0 0 32 32">
+                <path d="M16.002 3.2c-7.065 0-12.8 5.735-12.8 12.8 
+                0 2.258.589 4.371 1.619 6.217L3.2 28.8l6.764-1.585A12.73 
+                12.73 0 0016 28.802c7.065 0 12.8-5.735 
+                12.8-12.8s-5.735-12.8-12.798-12.8z"/>
+            </svg>
+        </span>
+        WhatsApp
+    </a>
+
 </div>
 
 </main>
@@ -197,9 +210,10 @@
     </a>
 </footer>
 
+<!-- BOTÓN SUBIR -->
 <button id="btn-subir" class="btn-subir">▲</button>
 
 <script src="js/app.js"></script>
-
 </body>
 </html>
+

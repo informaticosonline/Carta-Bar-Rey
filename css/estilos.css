@@ -1,90 +1,74 @@
 /* ============================================================
-   RESET BÁSICO
+   RESET
    ============================================================ */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================================
-   ESTILOS GENERALES
+   FONDO GENERAL
    ============================================================ */
 body {
-    margin: 0;
-    padding: 0;
     background: linear-gradient(180deg, #f6efe6, #e8dccf);
     font-family: Arial, sans-serif;
 }
 
-.carta-contenedor {
+/* ============================================================
+   INTRO
+   ============================================================ */
+.intro-presentacion {
     width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.intro-texto {
+    text-align: right;
+}
+
+.intro-texto h1 {
+    font-size: 34px;
+    color: #75391C;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+.intro-texto h2 {
+    font-size: 26px;
+    color: #555;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+.logo-intro {
+    width: 150px;
+    height: auto;
+}
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL
+   ============================================================ */
+.carta-contenedor {
     max-width: 900px;
     margin: 30px auto;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background: linear-gradient(180deg, #6b3a1e, #4a2412);
     border-radius: 22px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 /* ============================================================
-   INTRO PRESENTACIÓN
-   ============================================================ */
-.intro-presentacion {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto 30px;
-    padding: 10px 15px;
-    gap: 10px;
-}
-
-.intro-texto {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    text-align: right;
-}
-
-.intro-texto h1,
-.intro-texto h2 {
-    margin: 0;
-    font-family: 'Roboto Condensed', Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    color: #333;
-}
-
-.intro-texto h1 {
-    font-size: 34px;
-    color: #75391C;
-}
-
-.intro-texto h2 {
-    font-size: 26px;
-    color: #555;
-}
-
-.logo-intro {
-    width: 150px;
-    max-width: 100%;
-}
-
-/* ============================================================
    CARTA PREMIUM
    ============================================================ */
 .carta-premium {
-    width: 100%;
-    max-width: 860px;
     background: radial-gradient(circle at top, #2b1a10, #050301);
     border-radius: 18px;
     padding: 25px;
     color: #f2f2f2;
-    box-shadow: inset 0 0 30px rgba(255,255,255,0.05),
-                0 10px 30px rgba(0,0,0,0.7);
     font-family: 'Roboto Condensed', Arial, sans-serif;
 }
 
@@ -94,16 +78,15 @@ body {
 }
 
 .carta-header h1 {
-    margin: 0;
     font-size: 34px;
-    letter-spacing: 2px;
     color: #ffffff;
+    letter-spacing: 2px;
 }
 
 .carta-header p {
-    margin: 5px 0;
     color: #d6b067;
     font-size: 18px;
+    margin: 5px 0;
 }
 
 .carta-header span {
@@ -111,6 +94,9 @@ body {
     color: #aaa;
 }
 
+/* ============================================================
+   CATEGORÍAS
+   ============================================================ */
 .bloque-categoria {
     margin-bottom: 40px;
 }
@@ -124,13 +110,30 @@ body {
 }
 
 /* ============================================================
+   CABECERA PRECIOS
+   ============================================================ */
+.cabecera-precios {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.col-precios {
+    display: flex;
+    gap: 40px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* ============================================================
    FILAS DE PLATOS
    ============================================================ */
 .fila-plato {
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    padding: 12px 5px;
+    padding: 14px 5px;
     border-bottom: 1px dashed rgba(255,255,255,0.15);
 }
 
@@ -140,9 +143,9 @@ body {
 }
 
 .fila-plato p {
-    margin: 4px 0 0;
     font-size: 14px;
     color: #bbb;
+    margin-top: 4px;
 }
 
 .info-plato {
@@ -157,68 +160,79 @@ body {
     white-space: nowrap;
 }
 
+/* ============================================================
+   FILAS SIMPLES (POSTRES)
+   ============================================================ */
 .fila-plato.simple {
     display: flex;
     justify-content: space-between;
 }
 
 /* ============================================================
-   CABECERA DOBLE PRECIO
+   SISTEMA DE IMÁGENES DE PLATOS
    ============================================================ */
-.cabecera-precios {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 20px;
+.fila-con-imagen {
+    align-items: center;
 }
 
-.col-precios {
-    display: flex;
-    gap: 40px;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: #aaa;
+.plato-imagen {
+    width: 140px;
+    min-width: 140px;
+    height: 90px;
+    margin-left: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.plato-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ============================================================
-   BOTONES DE CONTACTO
+   BOTONES
    ============================================================ */
 .contacto-botones {
     display: flex;
-    gap: 15px;
     justify-content: center;
+    gap: 15px;
     margin: 30px 0;
-    width: 100%;
 }
 
 .btn-contacto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 14px 22px;
     border-radius: 12px;
     color: white;
     text-decoration: none;
     font-family: 'Roboto Condensed', Arial, sans-serif;
     font-size: 18px;
-    font-weight: 400;
-    gap: 10px;
-    transition: 0.2s ease;
+    transition: 0.2s;
 }
 
 .btn-telefono { background-color: #0b2346; }
 .btn-whatsapp2 { background-color: #25d366; }
 
 .btn-contacto:hover {
+    transform: scale(1.05);
     opacity: 0.9;
-    transform: scale(1.03);
+}
+
+/* ============================================================
+   FECHA
+   ============================================================ */
+.fecha-actualizacion {
+    text-align: center;
+    color: #01a1db;
+    margin: 10px 0;
+    font-size: 14px;
 }
 
 /* ============================================================
    FOOTER
    ============================================================ */
 .footer-logo {
-    width: 100%;
     display: flex;
     justify-content: center;
     margin: 20px 0;
@@ -227,13 +241,7 @@ body {
 .logo-footer {
     width: 220px;
     max-width: 70%;
-    height: auto;
     opacity: 0.9;
-    transition: 0.3s ease;
-}
-
-.logo-footer:hover {
-    opacity: 1;
 }
 
 /* ============================================================
@@ -251,14 +259,11 @@ body {
     border-radius: 50%;
     font-size: 22px;
     display: none;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-    z-index: 9999;
 }
 
 /* ============================================================
-   RESPONSIVE GENERAL
+   RESPONSIVE
    ============================================================ */
 @media (max-width: 700px) {
     .intro-presentacion {
@@ -269,21 +274,9 @@ body {
     .intro-texto {
         text-align: center;
     }
-
-    .logo-intro {
-        width: 130px;
-    }
 }
 
 @media (max-width: 600px) {
-
-    .contacto-botones {
-        flex-direction: column;
-    }
-
-    .btn-contacto {
-        width: 100%;
-    }
 
     .fila-plato {
         flex-direction: column;
@@ -293,7 +286,6 @@ body {
     .precios {
         flex-direction: column;
         gap: 6px;
-        width: 100%;
     }
 
     .precios span::before {
@@ -312,6 +304,21 @@ body {
 
     .col-precios {
         display: none;
+    }
+
+    .fila-con-imagen {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .plato-imagen {
+        width: 100%;
+        height: 160px;
+        margin: 10px 0 0;
+    }
+
+    .contacto-botones {
+        flex-direction: column;
     }
 }
 

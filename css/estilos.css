@@ -23,7 +23,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background: linear-gradient(180deg, #6b3a1e, #4a2412);
     border-radius: 22px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
@@ -36,22 +35,20 @@ body {
     width: 100%;
     max-width: 900px;
     display: flex;
-    justify-content: center;          /* Centra todo el conjunto */
+    justify-content: center;
     align-items: center;
     margin: 20px auto 30px auto;
     padding: 10px 15px;
-    gap: 10px;                         /* 🔹 MENOS distancia texto-logo */
+    gap: 10px;
 }
 
-/* Contenedor de textos */
 .intro-texto {
     display: flex;
     flex-direction: column;
-    gap: 2px;                          /* Textos más compactos */
-    text-align: right;                 /* Mejor alineación hacia el logo */
+    gap: 2px;
+    text-align: right;
 }
 
-/* Textos */
 .intro-texto h1,
 .intro-texto h2 {
     margin: 0;
@@ -71,7 +68,6 @@ body {
     color: #555;
 }
 
-/* Logo */
 .logo-intro {
     width: 150px;
     max-width: 100%;
@@ -161,24 +157,20 @@ body {
     cursor: pointer;
 }
 
-/* Azules y verdes */
 .btn-telefono { background-color: #0b2346; }
 .btn-whatsapp2 { background-color: #25d366; }
 
-/* Iconos dentro de los botones */
 .icono-svg svg {
     width: 22px;
     height: 22px;
     fill: white;
 }
 
-/* Hover */
 .btn-contacto:hover {
     opacity: 0.9;
     transform: scale(1.03);
 }
 
-/* Móvil → botones uno debajo del otro */
 @media (max-width: 600px) {
     .contacto-botones {
         flex-direction: column;
@@ -214,7 +206,6 @@ body {
     opacity: 1;
 }
 
-/* Móvil pequeño */
 @media (max-width: 380px) {
     .logo-footer {
         width: 150px;
@@ -276,7 +267,6 @@ body {
 /* ============================================================
    CARTA PREMIUM OSCURA
    ============================================================ */
-
 .carta-premium {
     width: 100%;
     max-width: 860px;
@@ -324,12 +314,77 @@ body {
     letter-spacing: 1px;
 }
 
-.fila-plato {
+/* =========================
+   ESTRUCTURA DE PRECIOS Y ALINEACIÓN
+========================= */
+.cabecera-precios {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.cabecera-precios h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.col-precios {
+    display: flex;
+    gap: 40px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #aaa;
+    justify-content: flex-end;
+    min-width: 150px;
+}
+
+.col-precios span {
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* =========================
+   ESTRUCTURA DE FILAS CON IMÁGENES
+========================= */
+.fila-plato {
+    display: flex;
+    align-items: flex-start;
     gap: 15px;
     padding: 12px 5px;
     border-bottom: 1px dashed rgba(255,255,255,0.15);
+}
+
+/* Imagen del plato - IZQUIERDA EN PC */
+.imagen-plato {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    border: 2px solid rgba(214,176,103,0.3);
+    order: 1; /* Primera posición en PC */
+}
+
+.imagen-plato img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.imagen-plato img:hover {
+    transform: scale(1.05);
+}
+
+/* Información del plato */
+.info-plato {
+    flex: 1;
+    max-width: calc(100% - 250px);
+    order: 2; /* Segunda posición en PC */
 }
 
 .fila-plato strong {
@@ -343,78 +398,24 @@ body {
     color: #bbb;
 }
 
-.fila-plato span {
-    white-space: nowrap;
-    font-weight: bold;
-    color: #01a1db;
-}
-
-/* MÓVIL */
-@media (max-width: 600px) {
-    .fila-plato {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .fila-plato span {
-        margin-top: 5px;
-    }
-}
-/* =========================
-   CABECERA CON DOBLE PRECIO
-========================= */
-
-.cabecera-precios {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 20px;
-}
-
-.col-precios {
+/* Precios - DERECHA EN PC */
+.precios {
     display: flex;
     gap: 40px;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: #aaa;
+    justify-content: flex-end;
+    min-width: 150px;
+    text-align: right;
+    order: 3; /* Tercera posición en PC */
 }
 
-.info-plato {
-    max-width: 70%;
-}
-
-@media (max-width: 600px) {
-
-    .precios {
-        flex-direction: column;
-        gap: 6px;
-        width: 100%;
-    }
-
-    .precios span {
-        font-size: 15px;
-        color: #01a1db;
-    }
-
-    /* MOSTRAR ETIQUETAS EN MÓVIL */
-    .precios span::before {
-        font-size: 13px;
-        color: #d6b067;
-        margin-right: 6px;
-    }
-
-    .precios span:nth-child(1)::before {
-        content: "Tapa: ";
-    }
-
-    .precios span:nth-child(2)::before {
-        content: "Ración: ";
-    }
-
-    /* OCULTAR CABECERA SUPERIOR SOLO EN MÓVIL */
-    .col-precios {
-        display: none;
-    }
+.precios span {
+    font-weight: bold;
+    color: #01a1db;
+    font-size: 16px;
+    white-space: nowrap;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
 }
 
 .fila-plato.simple {
@@ -422,13 +423,129 @@ body {
     justify-content: space-between;
 }
 
-/* MÓVIL */
-@media (max-width: 600px) {
-    .precios {
-        flex-direction: column;
-        gap: 5px;
+/* =========================
+   RESPONSIVE - MÓVIL
+========================= */
+@media (max-width: 768px) {
+    /* REORDENACIÓN PARA MÓVIL: Imagen a la DERECHA */
+    .fila-plato {
+        flex-wrap: nowrap;
+        gap: 12px;
+        align-items: center;
+        position: relative;
+        padding-right: 90px; /* Espacio para imagen derecha */
     }
+    
+    /* Imagen pasa a la DERECHA en móvil */
+    .imagen-plato {
+        order: 3; /* Última posición en móvil */
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+    
+    .info-plato {
+        order: 1;
+        max-width: calc(100% - 80px);
+        padding-right: 10px;
+    }
+    
+    .precios {
+        order: 2;
+        flex-direction: column;
+        gap: 6px;
+        min-width: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 15px;
+    }
+    
+    .precios span {
+        width: auto;
+        text-align: left;
+        font-size: 15px;
+    }
+    
+    /* Etiquetas TAPA/RACIÓN en móvil */
+    .precios span:nth-child(1)::before {
+        content: "Tapa: ";
+        font-size: 13px;
+        color: #d6b067;
+        margin-right: 6px;
+    }
+    
+    .precios span:nth-child(2)::before {
+        content: "Ración: ";
+        font-size: 13px;
+        color: #d6b067;
+        margin-right: 6px;
+    }
+    
+    /* Ocultar cabecera de precios en móvil */
     .col-precios {
         display: none;
+    }
+    
+    /* Ajuste cabecera */
+    .cabecera-precios {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+    .fila-plato {
+        padding-right: 75px;
+        gap: 10px;
+    }
+    
+    .imagen-plato {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+    
+    .info-plato {
+        max-width: calc(100% - 70px);
+    }
+    
+    .precios {
+        margin-left: 10px;
+        gap: 4px;
+    }
+    
+    .precios span {
+        font-size: 14px;
+    }
+    
+    .precios span::before {
+        font-size: 12px;
+    }
+}
+
+/* Para platos sin imagen (postres) */
+.fila-plato:not(:has(.imagen-plato)) {
+    padding-right: 0 !important;
+}
+
+/* Ajuste específico para filas sin imagen en móvil */
+@media (max-width: 768px) {
+    .fila-plato:not(:has(.imagen-plato)) .info-plato {
+        max-width: 100%;
+    }
+    
+    .fila-plato:not(:has(.imagen-plato)) .precios {
+        flex-direction: row;
+        gap: 30px;
+        width: 100%;
+        margin-top: 8px;
+        margin-left: 0;
+        justify-content: flex-start;
     }
 }

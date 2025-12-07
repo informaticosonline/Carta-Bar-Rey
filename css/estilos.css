@@ -1,6 +1,6 @@
 /* ============================================================
-   RESET
-   ============================================================ */
+   RESET BÁSICO
+============================================================ */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,8 +8,8 @@
 }
 
 /* ============================================================
-   FONDO GENERAL
-   ============================================================ */
+   BODY GENERAL
+============================================================ */
 body {
     background: linear-gradient(180deg, #f6efe6, #e8dccf);
     font-family: Arial, sans-serif;
@@ -17,15 +17,15 @@ body {
 
 /* ============================================================
    INTRO
-   ============================================================ */
+============================================================ */
 .intro-presentacion {
     width: 100%;
     max-width: 900px;
-    margin: 20px auto;
+    margin: 20px auto 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .intro-texto {
@@ -46,15 +46,26 @@ body {
 
 .logo-intro {
     width: 150px;
-    height: auto;
+}
+
+@media (max-width: 700px) {
+    .intro-presentacion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-texto {
+        text-align: center;
+    }
 }
 
 /* ============================================================
-   CONTENEDOR PRINCIPAL
-   ============================================================ */
+   CONTENEDOR CARTA
+============================================================ */
 .carta-contenedor {
+    width: 100%;
     max-width: 900px;
-    margin: 30px auto;
+    margin: 0 auto 30px;
     padding: 20px;
     background: linear-gradient(180deg, #6b3a1e, #4a2412);
     border-radius: 22px;
@@ -63,12 +74,14 @@ body {
 
 /* ============================================================
    CARTA PREMIUM
-   ============================================================ */
+============================================================ */
 .carta-premium {
     background: radial-gradient(circle at top, #2b1a10, #050301);
     border-radius: 18px;
     padding: 25px;
     color: #f2f2f2;
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.05),
+                0 10px 30px rgba(0,0,0,0.7);
     font-family: 'Roboto Condensed', Arial, sans-serif;
 }
 
@@ -78,15 +91,13 @@ body {
 }
 
 .carta-header h1 {
-    font-size: 34px;
-    color: #ffffff;
+    font-size: 36px;
     letter-spacing: 2px;
 }
 
 .carta-header p {
     color: #d6b067;
-    font-size: 18px;
-    margin: 5px 0;
+    margin: 8px 0;
 }
 
 .carta-header span {
@@ -96,7 +107,7 @@ body {
 
 /* ============================================================
    CATEGORÍAS
-   ============================================================ */
+============================================================ */
 .bloque-categoria {
     margin-bottom: 40px;
 }
@@ -111,45 +122,45 @@ body {
 
 /* ============================================================
    CABECERA PRECIOS
-   ============================================================ */
+============================================================ */
 .cabecera-precios {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 20px;
 }
 
 .col-precios {
     display: flex;
     gap: 40px;
     font-size: 13px;
+    letter-spacing: 1px;
     color: #aaa;
 }
 
 /* ============================================================
-   FILAS DE PLATOS
-   ============================================================ */
+   FILAS PLATOS
+============================================================ */
 .fila-plato {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    padding: 14px 5px;
+    gap: 20px;
+    padding: 18px 0;
     border-bottom: 1px dashed rgba(255,255,255,0.15);
 }
 
+.info-plato {
+    max-width: 70%;
+}
+
 .fila-plato strong {
-    font-size: 17px;
-    color: #ffffff;
+    font-size: 18px;
+    color: #fff;
 }
 
 .fila-plato p {
     font-size: 14px;
     color: #bbb;
     margin-top: 4px;
-}
-
-.info-plato {
-    max-width: 70%;
 }
 
 .precios {
@@ -161,131 +172,50 @@ body {
 }
 
 /* ============================================================
-   FILAS SIMPLES (POSTRES)
-   ============================================================ */
-.fila-plato.simple {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* ============================================================
-   SISTEMA DE IMÁGENES DE PLATOS
-   ============================================================ */
+   FILA CON IMAGEN
+============================================================ */
 .fila-con-imagen {
     align-items: center;
 }
 
-.plato-imagen {
-    width: 140px;
-    min-width: 140px;
-    height: 90px;
-    margin-left: 15px;
+.plato-imagen img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-.plato-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* ============================================================
+   POSTRES SIMPLES
+============================================================ */
+.fila-plato.simple {
+    justify-content: space-between;
 }
 
 /* ============================================================
-   BOTONES
-   ============================================================ */
-.contacto-botones {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
-}
-
-.btn-contacto {
-    padding: 14px 22px;
-    border-radius: 12px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Roboto Condensed', Arial, sans-serif;
-    font-size: 18px;
-    transition: 0.2s;
-}
-
-.btn-telefono { background-color: #0b2346; }
-.btn-whatsapp2 { background-color: #25d366; }
-
-.btn-contacto:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-/* ============================================================
-   FECHA
-   ============================================================ */
-.fecha-actualizacion {
-    text-align: center;
-    color: #01a1db;
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-.footer-logo {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.logo-footer {
-    width: 220px;
-    max-width: 70%;
-    opacity: 0.9;
-}
-
-/* ============================================================
-   BOTÓN SUBIR
-   ============================================================ */
-.btn-subir {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: rgba(1,161,219,0.3);
-    color: #01a1db;
-    border: 2px solid #01a1db;
-    border-radius: 50%;
-    font-size: 22px;
-    display: none;
-    cursor: pointer;
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media (max-width: 700px) {
-    .intro-presentacion {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-texto {
-        text-align: center;
-    }
-}
-
+   RESPONSIVE CARTA
+============================================================ */
 @media (max-width: 600px) {
 
     .fila-plato {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .info-plato {
+        max-width: 100%;
+    }
+
+    .plato-imagen img {
+        width: 100%;
+        height: auto;
     }
 
     .precios {
         flex-direction: column;
         gap: 6px;
+        font-size: 16px;
     }
 
     .precios span::before {
@@ -294,45 +224,98 @@ body {
         margin-right: 6px;
     }
 
-    .precios span:nth-child(1)::before {
-        content: "Tapa: ";
-    }
-
-    .precios span:nth-child(2)::before {
-        content: "Ración: ";
-    }
+    .precios span:nth-child(1)::before { content: "Tapa: "; }
+    .precios span:nth-child(2)::before { content: "Ración: "; }
 
     .col-precios {
         display: none;
     }
+}
 
-    .fila-con-imagen {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* ============================================================
+   BOTONES CONTACTO
+============================================================ */
+.contacto-botones {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
-    .plato-imagen {
-        width: 100%;
-        height: 160px;
-        margin: 10px 0 0;
-    }
+.btn-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 22px;
+    width: 260px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-size: 18px;
+    transition: 0.2s ease;
+}
 
+.btn-telefono { background: #0b2346; }
+.btn-whatsapp2 { background: #25d366; }
+
+.icono-svg svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+@media (max-width: 600px) {
     .contacto-botones {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-contacto {
+        width: 90%;
+        max-width: 320px;
     }
 }
 
-@media (max-width: 480px) {
-    .carta-contenedor {
-        padding: 10px;
-    }
-
-    .btn-subir {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
+/* ============================================================
+   FECHA
+============================================================ */
+.fecha-actualizacion {
+    text-align: center;
+    color: #01a1db;
+    margin: 10px 0;
 }
 
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
+.logo-footer {
+    width: 200px;
+}
 
+/* ============================================================
+   BOTÓN SUBIR
+============================================================ */
+.btn-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(1,161,219,0.3);
+    border: 2px solid #01a1db;
+    color: #01a1db;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

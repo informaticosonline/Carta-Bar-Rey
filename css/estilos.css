@@ -269,25 +269,90 @@ body {
     }
 }
 
-/* =========================
-   CARTA ESTILO PROFESIONAL
-========================= */
+/* ============================================================
+   CARTA PREMIUM OSCURA
+   ============================================================ */
 
-.plato {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 5px;
-    border-bottom: 1px dashed #ccc;
+.carta-premium {
+    width: 100%;
+    max-width: 900px;
+    background: radial-gradient(circle at top, #2b2b2b, #050505);
+    border-radius: 18px;
+    padding: 25px;
+    color: #f2f2f2;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+.carta-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.carta-header h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.carta-header p {
+    margin: 5px 0;
+    color: #d6b067;
     font-size: 18px;
 }
 
-.plato span:first-child {
-    color: #333;
+.carta-header span {
+    font-size: 13px;
+    color: #aaa;
 }
 
-.plato span:last-child {
+.bloque-categoria {
+    margin-bottom: 40px;
+}
+
+.bloque-categoria h2 {
+    color: #d6b067;
+    border-bottom: 2px solid rgba(214,176,103,0.4);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.fila-plato {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 5px;
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+}
+
+.fila-plato strong {
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.fila-plato p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.fila-plato span {
+    white-space: nowrap;
     font-weight: bold;
     color: #01a1db;
 }
 
+/* MÓVIL */
+@media (max-width: 600px) {
+    .fila-plato {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fila-plato span {
+        margin-top: 5px;
+    }
+}
 

@@ -346,6 +346,16 @@ body {
     display: inline-block;
 }
 
+/* CABECERA PARA POSTRES (SOLO UN PRECIO) */
+.cabecera-precios.postres .col-precios {
+    gap: 0;
+    min-width: 60px;
+}
+
+.cabecera-precios.postres .col-precios span {
+    width: 60px;
+}
+
 /* =========================
    ESTRUCTURA DE FILAS CON IMÁGENES
 ========================= */
@@ -418,9 +428,14 @@ body {
     text-align: center;
 }
 
-.fila-plato.simple {
-    display: flex;
-    justify-content: space-between;
+/* PRECIOS PARA POSTRES (SOLO UNO) */
+.precios.postre {
+    gap: 0;
+    min-width: 60px;
+}
+
+.precios.postre span {
+    width: 60px;
 }
 
 /* =========================
@@ -471,18 +486,24 @@ body {
     }
     
     /* Etiquetas TAPA/RACIÓN en móvil */
-    .precios span:nth-child(1)::before {
+    .precios:not(.postre) span:nth-child(1)::before {
         content: "Tapa: ";
         font-size: 13px;
         color: #d6b067;
         margin-right: 6px;
     }
     
-    .precios span:nth-child(2)::before {
+    .precios:not(.postre) span:nth-child(2)::before {
         content: "Ración: ";
         font-size: 13px;
         color: #d6b067;
         margin-right: 6px;
+    }
+    
+    /* Para postres en móvil */
+    .precios.postre span::before {
+        content: "";
+        margin-right: 0;
     }
     
     /* Ocultar cabecera de precios en móvil */
@@ -524,12 +545,12 @@ body {
         font-size: 14px;
     }
     
-    .precios span::before {
+    .precios:not(.postre) span::before {
         font-size: 12px;
     }
 }
 
-/* Para platos sin imagen (postres) */
+/* Para platos sin imagen */
 .fila-plato:not(:has(.imagen-plato)) {
     padding-right: 0 !important;
 }

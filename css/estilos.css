@@ -1,81 +1,285 @@
 /* ============================================================
-   RESET BÁSICO
-============================================================ */
+   REINICIO BÁSICO
+   ============================================================ */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 /* ============================================================
-   BODY GENERAL
-============================================================ */
+   ESTILOS GENERALES
+   ============================================================ */
 body {
+    margin: 0;
+    padding: 0;
     background: linear-gradient(180deg, #f6efe6, #e8dccf);
     font-family: Arial, sans-serif;
 }
 
-/* ============================================================
-   INTRO
-============================================================ */
-.intro-presentacion {
-    width: 100%;
-    max-width: 900px;
-    margin: 20px auto 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.intro-texto {
-    text-align: right;
-}
-
-.intro-texto h1 {
-    font-size: 34px;
-    color: #75391C;
-    font-family: 'Roboto Condensed', Arial, sans-serif;
-}
-
-.intro-texto h2 {
-    font-size: 26px;
-    color: #555;
-    font-family: 'Roboto Condensed', Arial, sans-serif;
-}
-
-.logo-intro {
-    width: 150px;
-}
-
-@media (max-width: 700px) {
-    .intro-presentacion {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-texto {
-        text-align: center;
-    }
-}
-
-/* ============================================================
-   CONTENEDOR CARTA
-============================================================ */
 .carta-contenedor {
     width: 100%;
     max-width: 900px;
-    margin: 0 auto 30px;
+    margin: 30px auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     background: linear-gradient(180deg, #6b3a1e, #4a2412);
     border-radius: 22px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 /* ============================================================
-   CARTA PREMIUM
-============================================================ */
+   INTRO PRESENTACIÓN (AJUSTE CENTRADO)
+   ============================================================ */
+.intro-presentacion {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;          /* Centra todo el conjunto */
+    align-items: center;
+    margin: 20px auto 30px auto;
+    padding: 10px 15px;
+    gap: 10px;                         /* 🔹 MENOS distancia texto-logo */
+}
+
+/* Contenedor de textos */
+.intro-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;                          /* Textos más compactos */
+    text-align: right;                 /* Mejor alineación hacia el logo */
+}
+
+/* Textos */
+.intro-texto h1,
+.intro-texto h2 {
+    margin: 0;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+.intro-texto h1 {
+    font-size: 34px;
+    color: #75391C;
+}
+
+.intro-texto h2 {
+    font-size: 26px;
+    color: #555;
+}
+
+/* Logo */
+.logo-intro {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =============================
+   RESPONSIVE (MÓVIL)
+   ============================= */
+@media (max-width: 700px) {
+    .intro-presentacion {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .intro-texto {
+        text-align: center;
+        gap: 4px;
+    }
+
+    .intro-texto h1 {
+        font-size: 28px;
+    }
+
+    .intro-texto h2 {
+        font-size: 22px;
+    }
+
+    .logo-intro {
+        width: 130px;
+    }
+}
+
+/* ============================================================
+   IMÁGENES DE LA CARTA
+   ============================================================ */
+.carta-imagen {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ============================================================
+   FECHA AUTOMÁTICA
+   ============================================================ */
+.fecha-actualizacion {
+    width: 100%;
+    text-align: center;
+    color: #01a1db;
+    font-size: 14px;
+    margin: 0 auto 10px auto;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   BOTONES DE CONTACTO
+   ============================================================ */
+.contacto-botones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.btn-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    gap: 10px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+/* Azules y verdes */
+.btn-telefono { background-color: #0b2346; }
+.btn-whatsapp2 { background-color: #25d366; }
+
+/* Iconos dentro de los botones */
+.icono-svg svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+/* Hover */
+.btn-contacto:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+/* Móvil → botones uno debajo del otro */
+@media (max-width: 600px) {
+    .contacto-botones {
+        flex-direction: column;
+    }
+    .btn-contacto {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   FOOTER CON LOGO
+   ============================================================ */
+.footer-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo-footer {
+    width: 220px;
+    max-width: 70%;
+    height: auto;
+    opacity: 0.9;
+    transition: 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo-footer:hover {
+    opacity: 1;
+}
+
+/* Móvil pequeño */
+@media (max-width: 380px) {
+    .logo-footer {
+        width: 150px;
+        max-width: 65%;
+        margin: 20px auto 10px;
+    }
+}
+
+/* ============================================================
+   BOTÓN SUBIR
+   ============================================================ */
+.btn-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(1, 161, 219, 0.3);
+    color: #01a1db;
+    border: 2px solid #01a1db;
+    border-radius: 50%;
+    font-size: 22px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 0.3s ease;
+}
+
+.btn-subir:hover {
+    opacity: 1;
+    background: rgba(1, 161, 219, 0.5);
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .btn-subir {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* ============================================================
+   AJUSTES RESPONSIVE GENERALES
+   ============================================================ */
+@media (max-width: 480px) {
+    .carta-contenedor {
+        padding: 5px;
+    }
+    .carta-imagen {
+        margin-bottom: 15px;
+    }
+}
+
+/* ============================================================
+   CARTA PREMIUM OSCURA
+   ============================================================ */
+
 .carta-premium {
+    width: 100%;
+    max-width: 860px;
     background: radial-gradient(circle at top, #2b1a10, #050301);
     border-radius: 18px;
     padding: 25px;
@@ -91,13 +295,16 @@ body {
 }
 
 .carta-header h1 {
-    font-size: 36px;
+    margin: 0;
+    font-size: 34px;
     letter-spacing: 2px;
+    color: #ffffff;
 }
 
 .carta-header p {
+    margin: 5px 0;
     color: #d6b067;
-    margin: 8px 0;
+    font-size: 18px;
 }
 
 .carta-header span {
@@ -105,9 +312,6 @@ body {
     color: #aaa;
 }
 
-/* ============================================================
-   CATEGORÍAS
-============================================================ */
 .bloque-categoria {
     margin-bottom: 40px;
 }
@@ -120,13 +324,51 @@ body {
     letter-spacing: 1px;
 }
 
-/* ============================================================
-   CABECERA PRECIOS
-============================================================ */
+.fila-plato {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 5px;
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+}
+
+.fila-plato strong {
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.fila-plato p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.fila-plato span {
+    white-space: nowrap;
+    font-weight: bold;
+    color: #01a1db;
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+    .fila-plato {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fila-plato span {
+        margin-top: 5px;
+    }
+}
+/* =========================
+   CABECERA CON DOBLE PRECIO
+========================= */
+
 .cabecera-precios {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-bottom: 20px;
 }
 
 .col-precios {
@@ -137,186 +379,56 @@ body {
     color: #aaa;
 }
 
-/* ============================================================
-   FILAS PLATOS
-============================================================ */
-.fila-plato {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 18px 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.15);
-}
-
 .info-plato {
     max-width: 70%;
 }
 
-.fila-plato strong {
-    font-size: 18px;
-    color: #fff;
-}
-
-.fila-plato p {
-    font-size: 14px;
-    color: #bbb;
-    margin-top: 4px;
-}
-
-.precios {
-    display: flex;
-    gap: 40px;
-    font-weight: bold;
-    color: #01a1db;
-    white-space: nowrap;
-}
-
-/* ============================================================
-   FILA CON IMAGEN
-============================================================ */
-.fila-con-imagen {
-    align-items: center;
-}
-
-.plato-imagen img {
-    width: 150px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-/* ============================================================
-   POSTRES SIMPLES
-============================================================ */
-.fila-plato.simple {
-    justify-content: space-between;
-}
-
-/* ============================================================
-   RESPONSIVE CARTA
-============================================================ */
 @media (max-width: 600px) {
-
-    .fila-plato {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .info-plato {
-        max-width: 100%;
-    }
-
-    .plato-imagen img {
-        width: 100%;
-        height: auto;
-    }
 
     .precios {
         flex-direction: column;
         gap: 6px;
-        font-size: 16px;
+        width: 100%;
     }
 
+    .precios span {
+        font-size: 15px;
+        color: #01a1db;
+    }
+
+    /* MOSTRAR ETIQUETAS EN MÓVIL */
     .precios span::before {
         font-size: 13px;
         color: #d6b067;
         margin-right: 6px;
     }
 
-    .precios span:nth-child(1)::before { content: "Tapa: "; }
-    .precios span:nth-child(2)::before { content: "Ración: "; }
+    .precios span:nth-child(1)::before {
+        content: "Tapa: ";
+    }
 
+    .precios span:nth-child(2)::before {
+        content: "Ración: ";
+    }
+
+    /* OCULTAR CABECERA SUPERIOR SOLO EN MÓVIL */
     .col-precios {
         display: none;
     }
 }
 
-/* ============================================================
-   BOTONES CONTACTO
-============================================================ */
-.contacto-botones {
-    margin: 30px 0;
+.fila-plato.simple {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: space-between;
 }
 
-.btn-contacto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 22px;
-    width: 260px;
-    border-radius: 12px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Roboto Condensed', Arial, sans-serif;
-    font-size: 18px;
-    transition: 0.2s ease;
-}
-
-.btn-telefono { background: #0b2346; }
-.btn-whatsapp2 { background: #25d366; }
-
-.icono-svg svg {
-    width: 22px;
-    height: 22px;
-    fill: white;
-}
-
+/* MÓVIL */
 @media (max-width: 600px) {
-    .contacto-botones {
+    .precios {
         flex-direction: column;
-        align-items: center;
+        gap: 5px;
     }
-
-    .btn-contacto {
-        width: 90%;
-        max-width: 320px;
+    .col-precios {
+        display: none;
     }
 }
-
-/* ============================================================
-   FECHA
-============================================================ */
-.fecha-actualizacion {
-    text-align: center;
-    color: #01a1db;
-    margin: 10px 0;
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
-.footer-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.logo-footer {
-    width: 200px;
-}
-
-/* ============================================================
-   BOTÓN SUBIR
-============================================================ */
-.btn-subir {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: rgba(1,161,219,0.3);
-    border: 2px solid #01a1db;
-    color: #01a1db;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
